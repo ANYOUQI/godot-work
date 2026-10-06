@@ -40,8 +40,8 @@ extends CharacterBody2D
 @export_category("调试")
 @export var allow_fly_toggle: bool = false
 
-@export var dash_speed: float = 320.0
-@export var dash_time: float = 0.18
+@export var dash_speed: float = 250.0
+@export var dash_time: float = 0.15
 var dash_timer: float = 0.0
 var dash_cooldown: float = 0.0
 var dash_direction: float = 0.0
@@ -278,4 +278,4 @@ func handle_dash(delta: float) -> void:
 		if dash_direction == 0.0:
 			dash_direction = -1.0 if sprite.flip_h else 1.0
 		dash_timer = dash_time
-		dash_cooldown = 0.6
+		dash_cooldown = 1.2

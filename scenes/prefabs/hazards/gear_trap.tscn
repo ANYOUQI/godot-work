@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://oavivey55b3l"]
 
 [ext_resource type="Script" uid="uid://c3gbogyf4d3nq" path="res://scripts/objects/gear.gd" id="1_pmaxb"]
-[ext_resource type="Texture2D" uid="uid://mul6cs8hmnef" path="res://齿轮.png" id="2_uut0j"]
+[ext_resource type="Texture2D" uid="uid://8fvx6wpq3qj1" path="res://齿轮无背景.png" id="2_pmaxb"]
 
 [sub_resource type="RectangleShape2D" id="Shape_spikes"]
 size = Vector2(184, 164)
@@ -13,7 +13,7 @@ script = ExtResource("1_pmaxb")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=145107300]
 texture_filter = 1
-texture = ExtResource("2_uut0j")
+texture = ExtResource("2_pmaxb")
 
 [node name="DetectionArea" type="CollisionShape2D" parent="." unique_id=770200366]
 shape = SubResource("Shape_spikes")

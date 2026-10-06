@@ -208,10 +208,12 @@ z_index = 5
 position = Vector2(216, 216)
 
 [node name="gear" parent="Level/PrefabInstances/Hazards" unique_id=718302402 instance=ExtResource("9_eb6dy")]
+z_index = 5
 position = Vector2(901, 225)
 scale = Vector2(0.2, 0.2)
 
 [node name="gear2" parent="Level/PrefabInstances/Hazards" unique_id=186895817 instance=ExtResource("9_eb6dy")]
+z_index = 5
 position = Vector2(1120, 224)
 scale = Vector2(0.2, 0.2)
 

@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://trt7j0gkjclk" path="res://生成Q版像素小人全身图.png" id="2_g2els"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_player"]
-radius = 5.0
-height = 17.0
+radius = 9.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2098904787]
 collision_layer = 2
@@ -13,11 +12,12 @@ script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=921388463]
 texture_filter = 1
+position = Vector2(0, 0.9999995)
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("2_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=151099089]
-position = Vector2(0, 2)
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_player")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1381498426]
