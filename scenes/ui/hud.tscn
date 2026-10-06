@@ -1,0 +1,49 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_hud")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 190.0
+offset_bottom = 26.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_font_sizes/font_size = 14
+text = "分数 000000"
+
+[node name="CoinsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 200.0
+offset_top = 6.0
+offset_right = 292.0
+offset_bottom = 26.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_font_sizes/font_size = 14
+text = "金币 x00"
+
+[node name="LivesLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 302.0
+offset_top = 6.0
+offset_right = 394.0
+offset_bottom = 26.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_font_sizes/font_size = 14
+text = "生命 x3"

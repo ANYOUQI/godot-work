@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/game/signs/direction_sign_right.png" id="1_texture"]
+[ext_resource type="Script" path="res://scripts/objects/goal.gd" id="2_script"]
+
+[sub_resource type="RectangleShape2D" id="Shape_goal"]
+size = Vector2(14, 30)
+
+[node name="Goal" type="Area2D" groups=["goal"]]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("2_script")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_texture")
+
+[node name="Area" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("Shape_goal")
