@@ -40,6 +40,12 @@ extends CharacterBody2D
 @export_category("调试")
 @export var allow_fly_toggle: bool = false
 
+@export var dash_speed: float = 320.0
+@export var dash_time: float = 0.18
+var dash_timer: float = 0.0
+var dash_cooldown: float = 0.0
+var dash_direction: float = 0.0
+
 @onready var sprite: Sprite2D = $Sprite2D
 
 ## 这两个不用 @export，因为它们是算出来的，不给你手动改
@@ -92,6 +98,7 @@ func _physics_process(delta: float) -> void:
 		handle_jump()
 		handle_short_jump()
 
+	handle_dash(delta)
 	handle_horizontal_movement(delta)
 	update_sprite_direction()
 
@@ -258,3 +265,17 @@ func _toggle_flying() -> void:
 		last_space_press_time = -1000.0
 	else:
 		last_space_press_time = now
+func handle_dash(delta: float) -> void:
+	dash_cooldown = maxf(dash_cooldown - delta, 0.0)
+	
+	if dash_timer > 0.0:
+		dash_timer -= delta
+		velocity.x = dash_direction * dash_speed
+		return
+	
+	if Input.is_action_just_pressed("dash") and dash_cooldown <= 0.0:
+		dash_direction = Input.get_axis("move_left", "move_right")
+		if dash_direction == 0.0:
+			dash_direction = -1.0 if sprite.flip_h else 1.0
+		dash_timer = dash_time
+		dash_cooldown = 0.6
