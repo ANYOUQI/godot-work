@@ -5,8 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://dys7320ghojh6" path="res://assets/game/backgrounds/cloud_hills.png" id="3_c7dcd"]
 [ext_resource type="Texture2D" uid="uid://1b8hp0rm864l" path="res://assets/game/backgrounds/cloud_right.png" id="4_edvbp"]
 [ext_resource type="TileSet" uid="uid://dkowcf1ljh41j" path="res://assets/game/tilesets/kenney_terrain_tileset.tres" id="5_4etix"]
+[ext_resource type="Texture2D" uid="uid://6ug8qdomhop7" path="res://第二关地图.jpg" id="5_ya4ey"]
+[ext_resource type="Script" uid="uid://cvsq63vu5eiac" path="res://scripts/objects/hazard.gd" id="8_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://c1u8k6ny02t4y" path="res://scenes/player.tscn" id="9_bauo3"]
-[ext_resource type="PackedScene" path="res://scenes/prefabs/hazards/spikes_double.tscn" id="15_ycytw"]
+[ext_resource type="PackedScene" uid="uid://oavivey55b3l" path="res://scenes/prefabs/hazards/gear_trap.tscn" id="9_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://yj4v3a6mapkx" path="res://scenes/prefabs/hazards/spikes_double.tscn" id="15_ycytw"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/interactables/spring_red.tscn" id="16_nih4k"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/collectibles/coin_gold_round.tscn" id="17_rmlt8"]
 
@@ -141,6 +144,12 @@ texture_filter = 1
 position = Vector2(468, 150)
 texture = ExtResource("4_edvbp")
 
+[node name="Sprite2D" type="Sprite2D" parent="Level/Background" unique_id=539719887]
+z_index = -10
+position = Vector2(978, 138.4185)
+scale = Vector2(0.261, 0.24784806)
+texture = ExtResource("5_ya4ey")
+
 [node name="TerrainTileMaps" type="Node2D" parent="Level" unique_id=652327492]
 
 [node name="TerrainBase" type="TileMapLayer" parent="Level/TerrainTileMaps" unique_id=91115499]
@@ -173,6 +182,7 @@ scale = Vector2(1, -1)
 [node name="Structures" type="Node2D" parent="Level/PrefabInstances" unique_id=1811607442]
 
 [node name="Hazards" type="Node2D" parent="Level/PrefabInstances" unique_id=888595377]
+script = ExtResource("8_eb6dy")
 
 [node name="Spikes_01" parent="Level/PrefabInstances/Hazards" unique_id=1025977450 instance=ExtResource("15_ycytw")]
 z_index = 5
@@ -181,6 +191,10 @@ position = Vector2(270, 200)
 [node name="Spikes_02" parent="Level/PrefabInstances/Hazards" unique_id=1262276584 instance=ExtResource("15_ycytw")]
 z_index = 5
 position = Vector2(216, 216)
+
+[node name="gear" parent="Level/PrefabInstances/Hazards" unique_id=718302402 instance=ExtResource("9_eb6dy")]
+position = Vector2(908, 226)
+scale = Vector2(0.2, 0.2)
 
 [node name="Interactables" type="Node2D" parent="Level/PrefabInstances" unique_id=769532488]
 
