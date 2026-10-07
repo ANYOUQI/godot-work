@@ -22,7 +22,7 @@ extends CharacterBody2D
 
 @export_category("跳跃")
 ## jump_height 单位是像素。瓦片是 18 像素，所以 54 = 正好 3 格高度。
-@export var jump_height: float = 54.0
+@export var jump_height: float = 65.0
 @export var jump_time_to_apex: float = 0.33
 @export var max_fall_speed: float = 380.0
 @export var short_jump_ratio: float = 0.45
@@ -40,7 +40,7 @@ extends CharacterBody2D
 @export_category("调试")
 @export var allow_fly_toggle: bool = false
 
-@export var dash_speed: float = 250.0
+@export var dash_speed: float = 300.0
 @export var dash_time: float = 0.15
 var dash_timer: float = 0.0
 var dash_cooldown: float = 0.0
@@ -149,6 +149,8 @@ func handle_short_jump() -> void:
 
 func handle_horizontal_movement(delta: float) -> void:
 	## get_axis(左, 右) 返回 -1 / 0 / +1，没按就是 0
+	if dash_timer > 0.0:
+		return
 	var direction := Input.get_axis("move_left", "move_right")
 	var target_speed := direction * move_speed
 

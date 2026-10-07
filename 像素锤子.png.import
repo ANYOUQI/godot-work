@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://trt7j0gkjclk"
-path="res://.godot/imported/生成Q版像素小人全身图.png-53f68c94fbc757b9b0a60712893d906c.ctex"
+uid="uid://bublk0hesgsl2"
+path="res://.godot/imported/像素锤子.png-b30f660081ce488905e2a273a1d2e323.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://生成Q版像素小人全身图.png"
-dest_files=["res://.godot/imported/生成Q版像素小人全身图.png-53f68c94fbc757b9b0a60712893d906c.ctex"]
+source_file="res://像素锤子.png"
+dest_files=["res://.godot/imported/像素锤子.png-b30f660081ce488905e2a273a1d2e323.ctex"]
 
 [params]
 
