@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dxy8b20egalle" path="res://像素锤子-removebg-preview.png" id="13_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://yj4v3a6mapkx" path="res://scenes/prefabs/hazards/spikes_double.tscn" id="15_ycytw"]
 [ext_resource type="Texture2D" uid="uid://bnublpgdp60kq" path="res://大狗叫-removebg-preview.png" id="16_jbj1t"]
-[ext_resource type="Script" uid="uid://b0mmcgm5iqigp" path="res://scenes/enemy.gd" id="16_muem4"]
+[ext_resource type="Script" uid="uid://dy707yfluomr" path="res://scripts/objects/enemy.gd" id="16_muem4"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/interactables/spring_red.tscn" id="16_nih4k"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/collectibles/coin_gold_round.tscn" id="17_rmlt8"]
 

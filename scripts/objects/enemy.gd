@@ -15,9 +15,10 @@ var bullet_scene = preload("res://scenes/prefabs/enemies/bullet.tscn")
 @onready var hitbox: Area2D = $HitBox
 
 func _ready() -> void:
+	print("小怪脚本运行了！")
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
 	add_to_group("enemies")
-
+	print("我的组: ", get_groups())
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
