@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bsg7gqjqbqnuh"]
+
+[ext_resource type="Script" uid="uid://btn8icbo4adp0" path="res://scripts/objects/sword_wave.gd" id="1_7j855"]
+[ext_resource type="Texture2D" uid="uid://d2duxh02a36hg" path="res://像素风格月牙形蓝色剑气-removebg-preview.png" id="2_7j855"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_htemk"]
+radius = 54.999878
+height = 109.999756
+
+[node name="Swordwave" type="Area2D" unique_id=962095747]
+light_mask = 3
+position = Vector2(440.20508, 379.14987)
+scale = Vector2(0.2, 0.2)
+collision_mask = 2
+script = ExtResource("1_7j855")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1394329238]
+position = Vector2(1.000061, -0.5)
+scale = Vector2(0.25445557, 0.2682187)
+texture = ExtResource("2_7j855")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1326922148]
+light_mask = 2
+position = Vector2(13.97467, -0.74932766)
+shape = SubResource("CapsuleShape2D_htemk")

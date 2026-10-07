@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://dgciyy0c2s3l5" path="res://scenes/levels/pendulumsaw.gd" id="12_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://dxy8b20egalle" path="res://像素锤子-removebg-preview.png" id="13_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://yj4v3a6mapkx" path="res://scenes/prefabs/hazards/spikes_double.tscn" id="15_ycytw"]
+[ext_resource type="Texture2D" uid="uid://bnublpgdp60kq" path="res://大狗叫-removebg-preview.png" id="16_jbj1t"]
+[ext_resource type="Script" uid="uid://b0mmcgm5iqigp" path="res://scenes/enemy.gd" id="16_muem4"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/interactables/spring_red.tscn" id="16_nih4k"]
 [ext_resource type="PackedScene" path="res://scenes/prefabs/collectibles/coin_gold_round.tscn" id="17_rmlt8"]
 
@@ -24,6 +26,12 @@ size = Vector2(15.500061, 189.59998)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0hq"]
 size = Vector2(9485.25, 104.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn4hl"]
+size = Vector2(32.5, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_htemk"]
+radius = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14cdr"]
 size = Vector2(82.5, 20)
@@ -319,6 +327,23 @@ shape = SubResource("RectangleShape2D_q4lci")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/PrefabInstances/endground" unique_id=667819708]
 position = Vector2(4624.375, 292)
 shape = SubResource("RectangleShape2D_pj0hq")
+
+[node name="enemy" type="Area2D" parent="Level/PrefabInstances" unique_id=596084672]
+script = ExtResource("16_muem4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/PrefabInstances/enemy" unique_id=511280448]
+position = Vector2(883, 119)
+scale = Vector2(0.064928524, 0.05882366)
+texture = ExtResource("16_jbj1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/PrefabInstances/enemy" unique_id=259453059]
+position = Vector2(882.75, 119)
+shape = SubResource("RectangleShape2D_wn4hl")
+
+[node name="HitBox" type="Area2D" parent="Level/PrefabInstances/enemy" unique_id=1383136370]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/PrefabInstances/enemy/HitBox" unique_id=862133650]
+shape = SubResource("CircleShape2D_htemk")
 
 [node name="extralfloor" type="StaticBody2D" parent="Level" unique_id=632727801]
 

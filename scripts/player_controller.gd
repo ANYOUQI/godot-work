@@ -61,6 +61,8 @@ var dead: bool = false
 var last_space_press_time: float = -1000.0
 var double_press_interval: float = 0.3
 
+var sword_wave_scene = preload("res://scenes/prefabs/enemies/sword_wave.tscn")
+var attack_cooldown: float = 0.0
 
 func _ready() -> void:
 	recalculate_jump()
@@ -102,6 +104,7 @@ func _physics_process(delta: float) -> void:
 	handle_horizontal_movement(delta)
 	update_sprite_direction()
 
+	handle_attack(delta)
 	## move_and_slide() = 拿当前的 velocity 去移动，遇到墙自动处理。
 	## 【重要】所有改 velocity 的代码都必须写在它前面！
 	move_and_slide()
@@ -281,3 +284,27 @@ func handle_dash(delta: float) -> void:
 			dash_direction = -1.0 if sprite.flip_h else 1.0
 		dash_timer = dash_time
 		dash_cooldown = 1.2
+func handle_attack(delta: float) -> void:
+	attack_cooldown = maxf(attack_cooldown - delta, 0.0)
+	if Input.is_action_just_pressed("attack") and attack_cooldown <= 0.0:
+		attack_cooldown = 0.4
+		shoot_sword_wave()
+
+func shoot_sword_wave() -> void:
+	var wave = sword_wave_scene.instantiate()
+	get_parent().add_child(wave)
+	wave.global_position = global_position
+	# 找最近的敌人
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	var nearest = null
+	var min_dist = 999999.0
+	for e in enemies:
+		var d = global_position.distance_to(e.global_position)
+		if d < min_dist:
+			min_dist = d
+			nearest = e
+	# 有敌人就朝他飞，没敌人就朝脸朝的方向飞
+	if nearest != null:
+		wave.direction = (nearest.global_position - global_position).normalized()
+	else:
+		wave.direction = Vector2.RIGHT if not sprite.flip_h else Vector2.LEFT

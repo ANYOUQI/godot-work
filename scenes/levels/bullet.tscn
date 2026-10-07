@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ccmbmfrmphtoj"]
+
+[ext_resource type="Script" uid="uid://ceecs154oj7i7" path="res://scripts/objects/bullet.gd" id="1_hooca"]
+[ext_resource type="Texture2D" uid="uid://fkn5w5kbgrwd" path="res://骨头.png" id="2_7fb2d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_14cdr"]
+radius = 91.204315
+height = 304.0
+
+[node name="Bullet" type="Area2D" unique_id=1184830327]
+position = Vector2(359.99994, 171.99997)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_hooca")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1907379669]
+position = Vector2(12.000061, -6.999954)
+scale = Vector2(0.199, 0.2)
+texture = ExtResource("2_7fb2d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2055972740]
+position = Vector2(29.000061, 13.0000305)
+rotation = 0.87266463
+scale = Vector2(0.4, 0.4)
+shape = SubResource("CapsuleShape2D_14cdr")

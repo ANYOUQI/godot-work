@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://djl48pbry1nqf"]
+
+[ext_resource type="Texture2D" uid="uid://bnublpgdp60kq" path="res://大狗叫-removebg-preview.png" id="1_llyn4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn4hl"]
+size = Vector2(32.5, 30)
+
+[node name="enemy" type="Area2D" unique_id=1011524582]
+position = Vector2(539.99994, 354.99997)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=276137561]
+position = Vector2(883, 119)
+scale = Vector2(0.064928524, 0.05882366)
+texture = ExtResource("1_llyn4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1576774637]
+position = Vector2(882.75, 119)
+shape = SubResource("RectangleShape2D_wn4hl")
