@@ -25,7 +25,7 @@ signal lives_changed(new_lives: int)
 
 var score: int = 0
 var coins: int = 0
-var lives: int = 3
+var lives: int = 5
 var deaths: int = 0
 var level_index: int = 0
 
@@ -78,7 +78,7 @@ func goto_next_level() -> void:
 func reset_run() -> void:
 	score = 0
 	coins = 0
-	lives = 3
+	lives = 5
 	deaths = 0
 	level_index = 0
 	print("[GameState] 数据已重置，准备重新开始")
